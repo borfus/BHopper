@@ -15,7 +15,7 @@ namespace BHopper
         int offsetFlags = FlagsOffset;
         int addressJump = JumpAddress;
 
-        string process = "csgo";
+        string process = "Process Name";
         int client;
 
         bool enabled = false;
@@ -113,7 +113,7 @@ namespace BHopper
                 {
                     foreach (ProcessModule m in processes[0].Modules)
                     {
-                        if (m.ModuleName == "client.dll")
+                        if (m.ModuleName == "Module Name")
                         {
                             client = (int)m.BaseAddress;
                             return true;
