@@ -63,9 +63,10 @@ namespace BHopper
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            int jump = client + addressJump;                                            // Current jump address location
-            int localPlayer = vAMemory.ReadInt32((IntPtr)addressLocalPlayer + client);  // Current player address location
-            int flags = vAMemory.ReadInt32((IntPtr)localPlayer + offsetFlags);          // Current 'flags' address location
+			// Current jump, localPlayer, and flags memory locations
+            int jump = client + addressJump;                                            
+            int localPlayer = vAMemory.ReadInt32((IntPtr)addressLocalPlayer + client);  
+            int flags = vAMemory.ReadInt32((IntPtr)localPlayer + offsetFlags);          
 
             // Main loop for jump logic
             while (true && enabled)
